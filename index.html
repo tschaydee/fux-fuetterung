@@ -1,31 +1,51 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>FUX Fütterung</title>
-        <script src="scripts.js"></script>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <h1>Nächste FUX-Fütterung</h1>
-        <img src="/assets/images/fux-logo.png" height="180" width="auto"/>
-        <div id="clockdiv">
-            <div>
-                <span class="days"></span>
-                <div class="smalltext">Days</div>
-            </div>
-            <div>
-                <span class="hours"></span>
-                <div class="smalltext">Hours</div>
-            </div>
-            <div>
-                <span class="minutes"></span>
-                <div class="smalltext">Minutes</div>
-            </div>
-            <div>
-                <span class="seconds"></span>
-                <div class="smalltext">Seconds</div>
-            </div>
-        </div>
-    </body>
+<head>
+	<meta charset="UTF-8">
+	<title>FUX Fütterung</title>
+	<script src="script-analog-clock.js"></script>
+	<script src="script-timer.js"></script>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>Nächste FUX Fütterung</h1>
+<div id="analog-clock">
+	<canvas id="canvas" width="400" height="400"></canvas>
+	<br/>
+	<input type="time" id="myTime" step="60" value=""><br/>
+	<button class="set-time" type="button" onclick="setTime();">Set time</button>
+	<br/>
+</div>
+<div id="digital-timer">
+	<img id="fux-img" src="./assets/images/fux-logo.png" height="180" width="auto"/><br/>
+	<div id="clockdiv">
+		<div>
+			<span class="minutes">00</span>
+			<div class="smalltext">Minuten</div>
+		</div>
+		<div>
+			<span class="seconds">00</span>
+			<div class="smalltext">Sekunden</div>
+		</div>
+	</div>
+	<br/>
+	<select id="minutesSelectbox" onchange='setMinutes();' name="minutes">
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>
+		<option value="7">7</option>
+		<option value="8">8</option>
+		<option value="9">9</option>
+		<option value="10">10</option>
+	</select>
+	<div class="button-container">
+		<button type="button" onclick="startTimer();">Start</button>
+		<button type="button" onclick="pauseTimer();">Pause</button>
+		<button type="button" onclick="resumeTimer();">Resume</button>
+	</div>
+</div>
+</body>
 </html>

@@ -1,41 +1,94 @@
-body{
+body {
     text-align: center;
-    background: #00ECB9;
+    background: #FFF;
     font-family: sans-serif;
     font-weight: 100;
 }
 
-h1{
-    color: #396;
-    font-weight: 100;
+h1 {
+    color: #002878;
+    font-weight: 300;
     font-size: 40px;
     margin: 40px 0px 20px;
+    line-height: 60px;
 }
 
-#clockdiv{
+#clockdiv {
     font-family: sans-serif;
     color: #fff;
     display: inline-block;
-    font-weight: 100;
+    font-weight: 300;
     text-align: center;
-    font-size: 30px;
+    font-size: 80px;
+    padding: 20px 0 0 0;
 }
 
-#clockdiv > div{
+#minutesSelectbox {
+    margin: 20px 0;
+    font-size: 16px;
+}
+
+#clockdiv > div {
     padding: 10px;
     border-radius: 3px;
-    background: #00BF96;
+    background: #7f93bb;
     display: inline-block;
 }
 
-#clockdiv div > span{
+#clockdiv div > span {
     padding: 15px;
     border-radius: 3px;
-    background: #00816A;
+    background: #002878;
     display: inline-block;
 }
 
-.smalltext{
+.button-container {
+    margin-bottom: 20px;
+}
+
+button {
+    min-width: 100px;
+    font-size: 16px;
+    background-color: #002878;
+    color: white;
+    border: 2px solid #002878;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+button:focus {
+    outline: none;
+}
+
+button:hover {
+    color: #7f93bb;
+}
+
+button:active {
+    background-color: white;
+    color: #002878;
+    border: 2px solid #002878;
+}
+
+.smalltext {
     padding-top: 5px;
     font-size: 16px;
+}
+
+input:focus {
+    outline: none;
+}
+
+#myTime {
+    font-size: 24px;
+    margin: 20px;
+    border: 2px solid #002878;
+}
+
+.set-time {
+    margin-bottom: 20px;
+}
+
+#analog-clock {
+    margin-bottom: 450px;
 }
