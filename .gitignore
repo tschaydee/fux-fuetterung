@@ -1,0 +1,16 @@
+# /
+/bin
+/target
+/node_modules
+/.idea
+/*.iml
+/*.log
+.DS_Store
+/.apt_generated/
+/node
+.project
+.classpath
+.settings
+.happypack/
+.babel-cache/
+/coverage
