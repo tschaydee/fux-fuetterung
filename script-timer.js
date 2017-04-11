@@ -107,4 +107,5 @@ window.onload = function (e) {
     setMinutes();
     startFirework();
     loop();
+    document.getElementById("removeClockBtn").disabled = true;
 };

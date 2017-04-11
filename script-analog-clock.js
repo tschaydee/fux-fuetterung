@@ -1,6 +1,4 @@
-var newClock1;
-var newClock2;
-var newClock3;
+var clockCount = 0;
 
 function Clock() {
     this.canvas = '';
@@ -9,7 +7,7 @@ function Clock() {
     this.timeIsSet = false;
 }
 
-Clock.prototype.drawClock = function(element, setTime, headline) {
+Clock.prototype.drawClock = function (element, setTime, headline) {
     console.log("draw clock");
     this.timeIsSet = true;
     this.canvas = document.getElementById(element);
@@ -22,9 +20,9 @@ Clock.prototype.drawClock = function(element, setTime, headline) {
     this.drawTime(this.ctx, this.radius, setTime, headline);
 };
 
-Clock.prototype.drawFace = function(ctx, radius) {
+Clock.prototype.drawFace = function (ctx, radius) {
     var grad;
-    ctx.setTransform(1, 0, 0, 1, this.canvas.width/2, this.canvas.height/2);
+    ctx.setTransform(1, 0, 0, 1, this.canvas.width / 2, this.canvas.height / 2);
     ctx.beginPath();
     ctx.arc(0, 0, radius, 0, 2 * Math.PI);
     ctx.fillStyle = 'white';
@@ -45,7 +43,7 @@ Clock.prototype.drawFace = function(ctx, radius) {
     ctx.globalAlpha = 1;
 };
 
-Clock.prototype.drawNumbers = function(ctx, radius) {
+Clock.prototype.drawNumbers = function (ctx, radius) {
     var ang;
     var num;
     ctx.font = radius * 0.15 + "px arial";
@@ -63,7 +61,7 @@ Clock.prototype.drawNumbers = function(ctx, radius) {
     }
 };
 
-Clock.prototype.drawTime = function(ctx, radius, setTime, headline) {
+Clock.prototype.drawTime = function (ctx, radius, setTime, headline) {
     var now;
     var inputTime = document.getElementById(setTime);
     var headlineValue = document.getElementById(headline);
@@ -80,7 +78,7 @@ Clock.prototype.drawTime = function(ctx, radius, setTime, headline) {
         var minutes = now.getMinutes() > 9 ? now.getMinutes() : '0' + now.getMinutes();
         var isoTime = hours + ':' + minutes;
         inputTime.value = isoTime;
-        headlineValue.textContent = isoTime  + ' Uhr';
+        headlineValue.textContent = isoTime + ' Uhr';
     }
     var hour = now.getHours();
     var minute = now.getMinutes();
@@ -101,7 +99,7 @@ Clock.prototype.drawTime = function(ctx, radius, setTime, headline) {
     timeIsSet = false;
 };
 
-Clock.prototype.drawHand = function(ctx, pos, length, width) {
+Clock.prototype.drawHand = function (ctx, pos, length, width) {
     ctx.beginPath();
     ctx.lineWidth = width;
     ctx.lineCap = "round";
@@ -112,17 +110,35 @@ Clock.prototype.drawHand = function(ctx, pos, length, width) {
     ctx.rotate(-pos);
 };
 
-function setTimeClock1() {
-    newClock1 = new Clock();
-    newClock1.drawClock("canvas1", "myTime1", "headline1");
+function setTimeClock(count) {
+    var newClock = new Clock();
+    newClock.drawClock("canvas" + count, "myTime" + count, "headline" + count);
 }
 
-function setTimeClock2() {
-    newClock2 = new Clock();
-    newClock2.drawClock("canvas2", "myTime2", "headline2");
+function addNewClock() {
+    console.log(clockCount);
+    if (clockCount < 4) {
+        clockCount++;
+        var parentElement = document.getElementById("analog-clock");
+        var element = '<div><h2>' + clockCount + '. Fütterung</h2> <h3 id="headline' + clockCount + '">-</h3><canvas id="canvas' + clockCount + '" width="400" height="400"></canvas> <br/><input type="time" id="myTime' + clockCount + '" step="60" value=""><br/> <button class="set-time" type="button" onclick="setTimeClock(' + clockCount + ');">Set time</button></div>';
+        parentElement.insertAdjacentHTML('beforeend', element);
+        document.getElementById("removeClockBtn").disabled = false;
+    }
+    if(clockCount == 4) {
+        document.getElementById("addClockBtn").disabled = true;
+    }
 }
 
-function setTimeClock3() {
-    newClock3 = new Clock();
-    newClock3.drawClock("canvas3", "myTime3", "headline3");
+function removeClock() {
+    console.log("remove", clockCount);
+    if (clockCount > 0) {
+        console.log(clockCount);
+        var parentElement = document.getElementById("analog-clock");
+        clockCount--;
+        parentElement.lastElementChild.remove();
+        document.getElementById("addClockBtn").disabled = false;
+    }
+    if (clockCount == 0) {
+        document.getElementById("removeClockBtn").disabled = true;
+    }
 }
