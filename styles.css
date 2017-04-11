@@ -1,13 +1,13 @@
 body {
     text-align: center;
-    background: #FFF;
     font-family: sans-serif;
     font-weight: 100;
+    background: #7f93bb;
 }
 
 h1 {
     color: #002878;
-    font-weight: 400;
+    font-weight: 600;
     font-size: 40px;
     margin: 40px 0px 10px;
     line-height: 60px;
@@ -22,7 +22,7 @@ h2 {
 }
 
 h3 {
-    color: #333;
+    color: #002878;
     font-weight: 600;
     font-size: 40px;
     line-height: 60px;
@@ -126,4 +126,5 @@ input {
     position: absolute;
     top: 0;
     left: 0;
+    z-index: -1;
 }
