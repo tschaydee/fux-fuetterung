@@ -119,3 +119,11 @@ input {
     align-items: center;
     margin: 20px;
 }
+
+#canvas-wrapper {
+    cursor: crosshair;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}

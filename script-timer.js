@@ -105,9 +105,6 @@ function setMinutes() {
 
 window.onload = function (e) {
     setMinutes();
+    startFirework();
+    loop();
 };
-
-
-
-
-
