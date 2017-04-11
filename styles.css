@@ -7,10 +7,26 @@ body {
 
 h1 {
     color: #002878;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 40px;
-    margin: 40px 0px 20px;
+    margin: 40px 0px 10px;
     line-height: 60px;
+}
+
+h2 {
+    color: #002878;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 40px;
+    margin: 0;
+}
+
+h3 {
+    color: #002878;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 60px;
+    margin: 5px 0;
 }
 
 #clockdiv {
@@ -79,8 +95,8 @@ input:focus {
     outline: none;
 }
 
-#myTime {
-    font-size: 24px;
+input {
+    font-size: 20px;
     margin: 20px;
     border: 2px solid #002878;
 }
@@ -91,4 +107,15 @@ input:focus {
 
 #analog-clock {
     margin-bottom: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#analog-clock >div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
 }

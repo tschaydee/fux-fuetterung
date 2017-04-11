@@ -105,7 +105,6 @@ function setMinutes() {
 
 window.onload = function (e) {
     setMinutes();
-    drawClock();
 };
 
 

@@ -8,13 +8,32 @@
 	<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<h1>Nächste FUX Fütterung</h1>
+<h1>FUX Fütterung</h1>
 <div id="analog-clock">
-	<canvas id="canvas" width="400" height="400"></canvas>
-	<br/>
-	<input type="time" id="myTime" step="60" value=""><br/>
-	<button class="set-time" type="button" onclick="setTime();">Set time</button>
-	<br/>
+	<div>
+		<h2>1. Fütterung</h2>
+		<h3 id="headline1">-</h3>
+		<canvas id="canvas1" width="400" height="400"></canvas>
+		<br/>
+		<input type="time" id="myTime1" step="60" value=""><br/>
+		<button class="set-time" type="button" onclick="setTimeClock1();">Set time</button>
+	</div>
+	<div>
+		<h2>2. Fütterung</h2>
+		<h3 id="headline2">-</h3>
+		<canvas id="canvas2" width="400" height="400"></canvas>
+		<br/>
+		<input type="time" id="myTime2" step="60" value=""><br/>
+		<button class="set-time" type="button" onclick="setTimeClock2();">Set time</button>
+	</div>
+	<div>
+		<h2>3. Fütterung</h2>
+		<h3 id="headline3">-</h3>
+		<canvas id="canvas3" width="400" height="400"></canvas>
+		<br/>
+		<input type="time" id="myTime3" step="60" value=""><br/>
+		<button class="set-time" type="button" onclick="setTimeClock3();">Set time</button>
+	</div>
 </div>
 <div id="digital-timer">
 	<img id="fux-img" src="./assets/images/fux-logo.png" height="180" width="auto"/><br/>
