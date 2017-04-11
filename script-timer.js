@@ -71,11 +71,12 @@ function startTimer() {
 function pauseTimer() {
     console.log("pause timer");
     if(!isPaused){
-        isPaused = true;
         pausedTime = getTimeRemaining(deadline).total; // preserve remaining time
+        deadline = new Date(Date.parse(new Date()) + pausedTime);
         document.getElementById('minutesSelectbox').disabled = false;
         clearInterval(timeinterval);
         timeinterval = 0;
+        isPaused = true;
     }
 }
 
